@@ -1,9 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser');
 
-let {mongoose} = require('./db/mongoose');
-let {Todo} = require('./models/Todo');
-let {User} = require('./models/User');
+var {mongoose} = require('./db/mongoose');
+var {Todo} = require('./models/Todo');
+var {User} = require('./models/User');
 
 var app = express();
 app.use(bodyParser.json());
@@ -44,3 +44,5 @@ app.post('/todos', (req, res) => {
 app.listen(3000, () => {
   console.log("Node running");
 });
+
+module.exports = {app}
